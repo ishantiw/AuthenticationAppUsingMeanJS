@@ -1,4 +1,8 @@
-/* global malarkey:false, moment:false */
+/* global malarkey:false, moment:false
+
+It contains our main app definition
+
+*/
 
 import { config } from './index.config';
 import { routerConfig } from './index.route';
