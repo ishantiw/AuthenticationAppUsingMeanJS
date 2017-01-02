@@ -1,17 +1,43 @@
 <div class="container">
-
-  <div>
-    <acme-navbar creation-date="main.creationDate"></acme-navbar>
-  </div>
-<div class="panel panel-default">
-    <div class="panel-heading">Please send me a message</div>
-    <div class="panel-body">
-        <div class="input-group">
-        <textarea row=3 class="form-control custom-control" style="resize:none;" >
-            Please write something here..
-            </textarea>
-        <span class="input-group-addon btn btn-primary" ng-click="main.postMessage()">Post</span>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Login</div>
+            <div class="panel-body">
+                <form>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
         </div>
     </div>
-
-</div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Register</div>
+            <div class="panel-body">
+                <form name="register">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" ng-model="pwd" name="pwd">
+                    </div>
+                    <div class="form-group">
+                        <label>Password confirm</label>
+                        <input type="password" class="form-control" compare-to="pwd" ng-model="pwdConfirm" name="pwdConfirm">
+                    </div>
+                    <!-- dirty checks if the user has interacted with the input -->
+                    <span ng-show="register.pwdConfirm.$dirty && register.pwdConfirm.$invalid">Passwords do not Match at all</span>
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
